@@ -1,0 +1,7 @@
+.container-game {
+  max-width: 475px;
+  margin: 0 auto;
+  @media (max-width: 499px) {
+    padding: 5px;
+  }
+}

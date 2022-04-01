@@ -1,0 +1,137 @@
+.grid {
+  display: flex;
+  justify-content: center;
+  &-container {
+    display: inline-block;
+    background-color: #bbada0;
+    padding: 15px 15px 6px 15px;
+    position: relative;
+    margin: 0, auto;
+    @media (max-width: 499px) {
+      padding: 5px 5px 0 5px;
+    }
+  }
+
+  &-row {
+    margin-bottom: 9px;
+    @media (max-width: 499px) {
+      margin-bottom: -1px;
+    }
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &-cell {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    background-color: rgba(238, 228, 218, 0.35);
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    @media (max-width: 499px) {
+      width: 70px;
+      height: 70px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.item {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 15px;
+  left: 15px;
+  animation: newItem 0.3s;
+  transition: left 0.1s, top 0.1s;
+  @media (max-width: 499px) {
+    width: 70px;
+    height: 70px;
+    top: 5px;
+    left: 5px;
+  }
+
+  &-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: seashell;
+
+    @media (max-width: 499px) {
+      font-size: 30px;
+    }
+  }
+}
+
+@keyframes newItem {
+  0% {
+    transform: scale(0.2);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(238, 228, 218, 0.45);
+
+  &-text {
+    font-size: 80px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.game-inf {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media (max-width: 499px) {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+  &__scores {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: flex-end;
+    .btn {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      width: 130px;
+      border-radius: 0%;
+
+      &:focus {
+        background-color: #ffc107;
+        border-color: #ffc107;
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="game-container">
+  <div class="game-inf">
+    <h2 class="game-inf__scores">Scores: {{gameService.scores}}</h2>
+    <div class="game-inf__btn">
+      <button (click)="gameService.resetGame()" type="button" class=" btn btn-warning">New
+        game</button>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid-container">
+      <div class="grid-row">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+      </div>
+
+      <div class="items">
+        <div *ngFor="let item of gameService.items" class="item" [ngStyle]="getStyles(item)">
+          <div class="item-title">{{item.value}}</div>
+        </div>
+        <div *ngIf="gameService.theEnd" class="overlay">
+          <div class="overlay-text">The End</div>
+        </div>
+      </div>
+    </div>
+  </div>
